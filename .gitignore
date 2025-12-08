@@ -1,27 +1,42 @@
-# Compiled class file
-*.class
 
-# Log file
-*.log
+# eclipse
+bin
+*.launch
+.settings
+.metadata
+.classpath
+.project
 
-# BlueJ files
-*.ctxt
+# idea
+out
+*.ipr
+*.iws
+*.iml
+# ignore .idea except
+.idea/*
+# code style
+!.idea/codeStyles/
+# inspection profile
+!.idea/inspectionProfiles/
+# recommended plugins
+!.idea/externalDependencies.xml
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+# vscode
+.vscode
 
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
+# gradle
+build
+.gradle
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-replay_pid*
+# other
+eclipse
+run
+run_server
+logs
 
-# Kotlin Gradle plugin data, see https://kotlinlang.org/docs/whatsnew20.html#new-directory-for-kotlin-data-in-gradle-projects
-.kotlin/
+# Files from Forge MDK
+forge*changelog.txt
+
+# Files generated for Fabric
+/fabric/src/generated/
+/.architectury-transformer/debug.log
