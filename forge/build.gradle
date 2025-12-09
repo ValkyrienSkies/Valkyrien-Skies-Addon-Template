@@ -84,7 +84,7 @@ loom {
     accessWidenerPath = project(":common").loom.accessWidenerPath
 
     forge {
-        //mixinConfig "vs_template-common.mixins.json"
+        mixinConfig "vs_template-common.mixins.json"
         mixinConfig "vs_template.mixins.json"
         convertAccessWideners.set(true)
         extraAccessWideners.add loom.accessWidenerPath.get().asFile.name
