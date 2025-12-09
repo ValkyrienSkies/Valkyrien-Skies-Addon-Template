@@ -2,9 +2,6 @@ pluginManagement {
     repositories {
         mavenCentral()
         gradlePluginPortal()
-        maven("https://maven.fabricmc.net/") {
-            name = "Fabric"
-        }
         maven("https://repo.spongepowered.org/repository/maven-public/") {
             name = "Sponge Snapshots"
         }
@@ -25,8 +22,5 @@ pluginManagement {
         }
     }
 }
-include("common")
-include("forge")
-include("fabric")
 
 rootProject.name = "vs-template-mod"
