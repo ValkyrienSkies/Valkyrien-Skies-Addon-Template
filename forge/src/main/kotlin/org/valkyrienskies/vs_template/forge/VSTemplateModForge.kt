@@ -14,7 +14,7 @@ import net.minecraftforge.registries.RegistryObject
 import org.valkyrienskies.vs_template.VSTemplateMod
 import org.valkyrienskies.vs_template.forge.client.VSTemplateModForgeClient
 
-@Mod("vs_template")
+@Mod(VSTemplateMod.MOD_ID)
 class VSTemplateModForge {
 
     //Deferred Registries
