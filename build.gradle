@@ -126,7 +126,7 @@ dependencies {
     //The VSCore version tag can be grabbed directly from the gradle.properties file in the Valkyrien skies repo.
     modApi("org.valkyrienskies:valkyrienskies-120-forge:${rootProject.vs2_version}") { transitive = false
         exclude group: 'org.valkyrienskies.core', module: ''
-        exclude group: "com.simibubi"
+        exclude group: "com.simibubi.create"
         exclude group: "io.github.fabricators_of_create"
         exclude group: "dev.engine-room"
         exclude group: "dev.engine_room"
