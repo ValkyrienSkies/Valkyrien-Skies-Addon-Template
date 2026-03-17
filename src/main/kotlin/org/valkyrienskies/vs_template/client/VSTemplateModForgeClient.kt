@@ -1,4 +1,4 @@
-package org.valkyrienskies.vs_template.forge.client
+package org.valkyrienskies.vs_template.client
 
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent
 
