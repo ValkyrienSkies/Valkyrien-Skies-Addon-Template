@@ -1,40 +1,33 @@
 modLoader = "javafml"
 loaderVersion = "[40,)"
 #issueTrackerURL = ""
-license = "Insert License Here"
+license = "${mod_license}"
 
 [[mods]]
-modId = "vs_template"
-version = "${version}"
-displayName = "Valkyrien Skies Addon Template"
-authors = "Me!"
+modId = "${mod_id}"
+version = "${mod_version}"
+displayName = "${mod_name}"
+authors = "${mod_authors}"
 description = '''
-This is an example description! Tell everyone what your mod is about!
+${mod_description}
 '''
 logoFile = "icon.png"
 
-[[dependencies.vs_template]]
+[[dependencies.${mod_id}]]
 modId = "forge"
 mandatory = true
 versionRange = "[47,)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.vs_template]]
+[[dependencies.${mod_id}]]
 modId = "minecraft"
 mandatory = true
 versionRange = "[1.20.1,)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.vs_template]]
-modId = "architectury"
-mandatory = true
-versionRange = "[9.1.12,)"
-ordering = "AFTER"
-side = "BOTH"
-
-[[dependencies.vs_template]]
+[[dependencies.${mod_id}]]
 modId = "valkyrienskies"
 mandatory = true
 versionRange = "[2.4.0,)"
