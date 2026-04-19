@@ -1,4 +1,4 @@
-package org.valkyrienskies.vs_template.forge
+package org.valkyrienskies.vs_template
 
 import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.Item
@@ -11,7 +11,7 @@ import net.minecraftforge.registries.DeferredRegister
 import net.minecraftforge.registries.ForgeRegistries
 import net.minecraftforge.registries.RegistryObject
 import org.valkyrienskies.mod.api.vsApi
-import org.valkyrienskies.vs_template.forge.client.VSTemplateModForgeClient
+import org.valkyrienskies.vs_template.client.VSTemplateModForgeClient
 
 @Mod("vs_template")
 class VSTemplateModForge {
