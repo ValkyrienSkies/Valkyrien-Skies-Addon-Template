@@ -22,7 +22,7 @@ You can do so by altering the following files:
 You should also rename anything prefixed with "VSTemplate" to your mod's name!
 Keep in mind files are case-sensitive, for example:
 - `VSTemplateMod.kt` -> `MySpecialMod.kt` :heavy_check_mark:
-- `vs_templatae.mixins.json` -> `myspecialmod.mixins.json` :heavy_check_mark:
+- `vs_template.mixins.json` -> `myspecialmod.mixins.json` :heavy_check_mark:
 - `VSTemplateMod.kt` -> `mySpecialMod.kt` :x: (ok technically this is legal, but it's ugly)
 - `vs_template.mixins.json` -> `MySpecialMod.mixins.json` :x:
 
