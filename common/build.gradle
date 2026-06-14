@@ -20,7 +20,9 @@ dependencies {
     implementation(("io.github.llamalad7:mixinextras-common:0.4.1"))
 
     // region VS dependency
-    modImplementation("org.valkyrienskies:valkyrienskies-120-common:${rootProject.vs2_version}") {
+
+    // We use -forge, not -common, because arch common is intermediary but this gradle setup wants mojmaps
+    implementation("org.valkyrienskies:valkyrienskies-120-forge:${rootProject.vs2_version}") {
         exclude group: 'org.valkyrienskies.core', module: ''
         exclude group: "com.simibubi"
         exclude group: "io.github.fabricators_of_create"
