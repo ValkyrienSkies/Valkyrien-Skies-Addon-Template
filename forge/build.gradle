@@ -67,11 +67,6 @@ dependencies {
 
     // region VS dependency
     modImplementation("org.valkyrienskies:valkyrienskies-120-forge:${rootProject.vs2_version}") { transitive = false
-        exclude group: 'org.valkyrienskies.core', module: ''
-        exclude group: "com.simibubi"
-        exclude group: "io.github.fabricators_of_create"
-        exclude group: "dev.engine-room"
-        exclude group: "dev.engine_room"
     }
     implementation("org.valkyrienskies.core:api:${rootProject.vs_core_version}") { transitive = false
         exclude group: 'org.joml', module: ''
