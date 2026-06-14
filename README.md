@@ -16,7 +16,7 @@ This template's default namespace/mod ID is "vs_template"- you'll likely want to
 You can do so by altering the following files:
 - Change the base package name in `settings.gradle`
 - Change the `group`, `mod_name`, `mod_author`, and `mod_id` properties in the `gradle.properties` f
-- Change the MOD_ID in `VSTemplateMod.java` in the `common` module
+- Change the MOD_ID in `VSTemplateMod.kt` in the `common` module
 - Edit the `fabric.mod.json` file in `src/main/resources/` in the `fabric` module
 
 You should also rename anything prefixed with "VSTemplate" to your mod's name!
@@ -55,8 +55,9 @@ This mod template uses a multiloader structure, with 4 modules:
 - `fabric` : This module contains code specific to the Fabric loader. This includes the Fabric mod initializer, and any Fabric-specific implementations of common code.
 - `forge` : This module contains code specific to the Forge loader. This includes the Forge mod class, and any Forge-specific implementations of common code.
 
-Within each module, you will find 2 primary submodules:
+Within each module, you will find 3 primary submodules:
 - `src/main/java` : This is where Java code goes. This is primarily used for Mixins, as Mixins cannot be written in Kotlin. You may also choose to relocate your primary mod files here, and not use Kotlin at all if you wish.
+- `src/main/kotlin` : This is where Kotlin code goes. VS addons written in kotlin tend to put most of their code here. 
 - `src/main/resources` : This is where resources go, such as Forge's `mods.toml`, Fabric's `fabric.mod.json`, mod assets, and data files.
 
 Feel free to remove the example `MixinTitleScreen`, `MixinMinecraft`, or even the `PlatformHelper`. However, these may serve as useful examples for later code.
@@ -69,14 +70,21 @@ Instead, this template comes with google autoservice added during compile time.
 This allows you to use raw services to come close to `@ExpectPlatform` behaviour.
 
 Usage:
-- Create an interface class in the `common` module
+- Create an interface class in the `common/kotlin` module
 - Add your method stubs you want to abstract between loaders to that interface
-- Add an `INSTANCE` property to the interface like so: `MyInterface INSTANCE = ServiceHelper.load(MyInterface.class);`
+- Add an `INSTANCE` property to the interface like so:
+
+```kotlin
+companion object { 
+    val INSTANCE: MyInterface = ServiceHelper.load<MyInterface>(MyInterface::class.java)
+}
+```
+
 - Add a class that implements the interface in both the `forge` and `fabric` module (it doesn't matter where you put the class, unlike with `@ExpectPlatform`)
-- Make that class annotated with `@AutoService(MyInterface.class)`
+- Make that class annotated with `@AutoService`
 
 Done! You now have a class split across loaders. 
-You use its methods by doing `MyInterface.INSTANCE.myMethod();`
+You use its methods by doing `MyInterface.INSTANCE.myMethod()`
 
 
 ### Using the VS Api
