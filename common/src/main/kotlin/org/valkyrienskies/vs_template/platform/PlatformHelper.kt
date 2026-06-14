@@ -1,16 +1,14 @@
-package org.valkyrienskies.vs_template.platform;
+package org.valkyrienskies.vs_template.platform
 
-import org.valkyrienskies.vs_template.platform.services.ServiceHelper;
+import org.valkyrienskies.vs_template.platform.services.ServiceHelper
 
-public interface PlatformHelper {
-    PlatformHelper INSTANCE = ServiceHelper.load(PlatformHelper.class);
-
+interface PlatformHelper {
     /**
      * Gets the name of the current platform
      *
      * @return The name of the current platform.
      */
-    String getPlatformName();
+    val platformName: String
 
     /**
      * Checks if a mod with the given id is loaded.
@@ -18,22 +16,25 @@ public interface PlatformHelper {
      * @param modId The mod to check if it is loaded.
      * @return True if the mod is loaded, false otherwise.
      */
-    boolean isModLoaded(String modId);
+    fun isModLoaded(modId: String): Boolean
 
     /**
      * Check if the game is currently in a development environment.
      *
      * @return True if in a development environment, false otherwise.
      */
-    boolean isDevelopmentEnvironment();
+    val isDevelopmentEnvironment: Boolean
 
     /**
      * Gets the name of the environment type as a string.
      *
      * @return The name of the environment type.
      */
-    default String getEnvironmentName() {
+    fun getEnvironmentName(): String {
+        return if (this.isDevelopmentEnvironment) "development" else "production"
+    }
 
-        return isDevelopmentEnvironment() ? "development" : "production";
+    companion object {
+        val INSTANCE: PlatformHelper = ServiceHelper.load<PlatformHelper>(PlatformHelper::class.java)
     }
 }

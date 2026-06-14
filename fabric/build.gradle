@@ -1,6 +1,7 @@
 plugins {
     id 'multiloader-loader'
     id 'fabric-loom'
+    id 'org.jetbrains.kotlin.jvm'
 }
 dependencies {
     minecraft "com.mojang:minecraft:${minecraft_version}"
@@ -33,6 +34,9 @@ dependencies {
     }
     implementation("org.joml:joml-primitives:1.10.0")
     implementation("org.joml:joml:1.10.4")
+    modImplementation("net.fabricmc:fabric-language-kotlin:${rootProject.fabric_language_kotlin_version}")
+    api "org.jetbrains.kotlin:kotlin-stdlib:2.0.0"
+    api "org.jetbrains.kotlin:kotlin-reflect:2.0.0"
     // endregion
 }
 
@@ -57,4 +61,10 @@ loom {
             runDir("run")
         }
     }
+}
+repositories {
+    mavenCentral()
+}
+kotlin {
+    jvmToolchain(17)
 }

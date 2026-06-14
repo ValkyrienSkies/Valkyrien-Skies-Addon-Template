@@ -1,6 +1,18 @@
 plugins {
     id 'fabric-loom' version '1.9-SNAPSHOT' apply(false)
     id 'net.neoforged.moddev.legacyforge' version '2.0.77' apply(false)
+    id 'org.jetbrains.kotlin.jvm' version "2.0.0" apply false
 }
 
-// If you're looking to add project-wide repositories, see multiloader-common.gradle instead
+repositories {
+    mavenCentral()
+}
+
+allprojects {
+    apply plugin: "kotlin"
+
+    kotlin {
+        jvmToolchain(17)
+    }
+}
+// If you're looking to add project-wide repositories or dependencies, see multiloader-common.gradle instead
