@@ -17,9 +17,10 @@ legacyForge {
 dependencies {
     compileOnly group: 'org.spongepowered', name: 'mixin', version: '0.8.5'
     implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
+    implementation(("io.github.llamalad7:mixinextras-common:0.4.1"))
 
     // region VS dependency
-    modApi("org.valkyrienskies:valkyrienskies-120-common:${rootProject.vs2_version}") {
+    modImplementation("org.valkyrienskies:valkyrienskies-120-common:${rootProject.vs2_version}") {
         exclude group: 'org.valkyrienskies.core', module: ''
         exclude group: "com.simibubi"
         exclude group: "io.github.fabricators_of_create"

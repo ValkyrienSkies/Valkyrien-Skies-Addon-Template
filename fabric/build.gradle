@@ -15,7 +15,7 @@ dependencies {
     implementation project(":common")
 
     // region VS dependency
-    modApi("org.valkyrienskies:valkyrienskies-120-fabric:${rootProject.vs2_version}") {
+    modImplementation("org.valkyrienskies:valkyrienskies-120-fabric:${rootProject.vs2_version}") {
         exclude group: 'org.valkyrienskies.core', module: ''
         exclude group: "com.simibubi"
         exclude group: "io.github.fabricators_of_create"

@@ -66,7 +66,7 @@ dependencies {
     // endregion
 
     // region VS dependency
-    modApi("org.valkyrienskies:valkyrienskies-120-forge:${rootProject.vs2_version}") { transitive = false
+    modImplementation("org.valkyrienskies:valkyrienskies-120-forge:${rootProject.vs2_version}") { transitive = false
         exclude group: 'org.valkyrienskies.core', module: ''
         exclude group: "com.simibubi"
         exclude group: "io.github.fabricators_of_create"
