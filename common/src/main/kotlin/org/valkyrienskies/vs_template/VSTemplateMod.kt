@@ -12,7 +12,7 @@ import org.valkyrienskies.vs_template.platform.PlatformHelper
 // however it will be compatible with all supported mod loaders.
 object VSTemplateMod {
     const val MOD_ID = "vs_template"
-    const val MOD_NAME: String = "VS Template"
+    const val MOD_NAME = "VS Template"
 
     @JvmStatic
     val LOG: Logger = LoggerFactory.getLogger(MOD_NAME)

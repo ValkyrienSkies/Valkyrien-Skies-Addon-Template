@@ -34,34 +34,45 @@ def refactorFolder(old_path, new_path):
     os.rename(old_path, new_path)
 
 
-# Forge
+# Forge - Java
 refactorFile("forge/src/main/java/org/valkyrienskies/vs_template/mixin/MixinTitleScreen.java",[
-    ["org.valkyrienskies.vs_template", f"{new_package}"],
-])
-refactorFile("forge/src/main/java/org/valkyrienskies/vs_template/platform/ForgePlatformHelper.java", [
-    ["org.valkyrienskies.vs_template", f"{new_package}"],
-])
-refactorFile("forge/src/main/java/org/valkyrienskies/vs_template/VSTemplateModForge.java", [
-    ["org.valkyrienskies.vs_template", f"{new_package}"],
-])
-refactorFile("forge/src/main/resources/vs_template.forge.mixins.json", [
     ["org.valkyrienskies.vs_template", f"{new_package}"],
 ])
 refactorFolder("forge/src/main/java/org/valkyrienskies/vs_template", f"forge/src/main/java/{new_package.replace(".", "/")}")
 
+# Forge - Kotlin
+refactorFile("forge/src/main/kotlin/org/valkyrienskies/vs_template/platform/ForgePlatformHelper.kt", [
+    ["org.valkyrienskies.vs_template", f"{new_package}"],
+])
+refactorFile("forge/src/main/kotlin/org/valkyrienskies/vs_template/VSTemplateModForge.kt", [
+    ["org.valkyrienskies.vs_template", f"{new_package}"],
+])
+refactorFolder("forge/src/main/kotlin/org/valkyrienskies/vs_template", f"forge/src/main/kotlin/{new_package.replace(".", "/")}")
+
+# Forge - Resources
+refactorFile("forge/src/main/resources/vs_template.forge.mixins.json", [
+    ["org.valkyrienskies.vs_template", f"{new_package}"],
+])
+
 os.rename(os.path.join(script_dir, "forge/src/main/resources/vs_template.forge.mixins.json"), os.path.join(script_dir, f"forge/src/main/resources/{new_mod_id}.forge.mixins.json"))
 
 
-# Fabric
+# Fabric - Java
 refactorFile("fabric/src/main/java/org/valkyrienskies/vs_template/mixin/MixinTitleScreen.java",[
     ["org.valkyrienskies.vs_template", f"{new_package}"],
 ])
-refactorFile("fabric/src/main/java/org/valkyrienskies/vs_template/platform/FabricPlatformHelper.java", [
+refactorFolder("fabric/src/main/java/org/valkyrienskies/vs_template", f"fabric/src/main/java/{new_package.replace(".", "/")}")
+
+# Fabric - Kotlin
+refactorFile("fabric/src/main/kotlin/org/valkyrienskies/vs_template/platform/FabricPlatformHelper.kt", [
     ["org.valkyrienskies.vs_template", f"{new_package}"],
 ])
-refactorFile("fabric/src/main/java/org/valkyrienskies/vs_template/VSTemplateModFabric.java", [
+refactorFile("fabric/src/main/kotlin/org/valkyrienskies/vs_template/VSTemplateModFabric.kt", [
     ["org.valkyrienskies.vs_template", f"{new_package}"],
 ])
+refactorFolder("fabric/src/main/kotlin/org/valkyrienskies/vs_template", f"fabric/src/main/kotlin/{new_package.replace(".", "/")}")
+
+# Fabric - Resources
 refactorFile("fabric/src/main/resources/vs_template.fabric.mixins.json", [
     ["org.valkyrienskies.vs_template", f"{new_package}"],
 ])
@@ -69,31 +80,33 @@ refactorFile("fabric/src/main/resources/fabric.mod.json", [
     ["org.valkyrienskies.vs_template", f"{new_package}"],
     ["vs_template", new_mod_id]
 ])
-refactorFolder("fabric/src/main/java/org/valkyrienskies/vs_template", f"fabric/src/main/java/{new_package.replace(".", "/")}")
-
 os.rename(os.path.join(script_dir, "fabric/src/main/resources/vs_template.fabric.mixins.json"), os.path.join(script_dir, f"fabric/src/main/resources/{new_mod_id}.fabric.mixins.json"))
 
 
-# Common
+# Common - Java
 refactorFile("common/src/main/java/org/valkyrienskies/vs_template/mixin/MixinMinecraft.java",[
-    ["org.valkyrienskies.vs_template", f"{new_package}"],
-])
-refactorFile("common/src/main/java/org/valkyrienskies/vs_template/platform/services/ServiceHelper.java", [
-    ["org.valkyrienskies.vs_template", f"{new_package}"],
-])
-refactorFile("common/src/main/java/org/valkyrienskies/vs_template/platform/PlatformHelper.java", [
-    ["org.valkyrienskies.vs_template", f"{new_package}"],
-])
-refactorFile("common/src/main/java/org/valkyrienskies/vs_template/VSTemplateMod.java", [
-    ["org.valkyrienskies.vs_template", f"{new_package}"],
-    ["MOD_ID = \"vs_template\"", f"MOD_ID = \"{new_mod_id}\""],
-    ["MOD_NAME = \"vs_template\"", f"MOD_NAME = \"{new_mod_name}\""]
-])
-refactorFile("common/src/main/resources/vs_template.mixins.json", [
     ["org.valkyrienskies.vs_template", f"{new_package}"],
 ])
 refactorFolder("common/src/main/java/org/valkyrienskies/vs_template", f"common/src/main/java/{new_package.replace(".", "/")}")
 
+# Common - Kotlin
+refactorFile("common/src/main/kotlin/org/valkyrienskies/vs_template/platform/services/ServiceHelper.kt", [
+    ["org.valkyrienskies.vs_template", f"{new_package}"],
+])
+refactorFile("common/src/main/kotlin/org/valkyrienskies/vs_template/platform/PlatformHelper.kt", [
+    ["org.valkyrienskies.vs_template", f"{new_package}"],
+])
+refactorFile("common/src/main/kotlin/org/valkyrienskies/vs_template/VSTemplateMod.kt", [
+    ["org.valkyrienskies.vs_template", f"{new_package}"],
+    ["MOD_ID = \"vs_template\"", f"MOD_ID = \"{new_mod_id}\""],
+    ["MOD_NAME = \"vs_template\"", f"MOD_NAME = \"{new_mod_name}\""]
+])
+refactorFolder("common/src/main/kotlin/org/valkyrienskies/vs_template", f"common/src/main/kotlin/{new_package.replace(".", "/")}")
+
+# Common - Resources
+refactorFile("common/src/main/resources/vs_template.mixins.json", [
+    ["org.valkyrienskies.vs_template", f"{new_package}"],
+])
 os.rename(os.path.join(script_dir, "common/src/main/resources/vs_template.mixins.json"), os.path.join(script_dir, f"common/src/main/resources/{new_mod_id}.mixins.json"))
 
 
