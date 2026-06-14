@@ -10,7 +10,6 @@ class VSTemplateModForge {
         // project.
 
         // Use Forge to bootstrap the Common mod.
-
         VSTemplateMod.LOG.info("Hello Forge world!")
         VSTemplateMod.init()
     }

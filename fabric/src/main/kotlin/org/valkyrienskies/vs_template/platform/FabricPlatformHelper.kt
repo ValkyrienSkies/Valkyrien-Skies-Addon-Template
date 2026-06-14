@@ -1,10 +1,10 @@
 package org.valkyrienskies.vs_template.platform
 
-import com.google.auto.service.AutoService
+import com.fueledbycaffeine.autoservice.AutoService
 import net.fabricmc.loader.api.FabricLoader
 
-@AutoService(PlatformHelper::class)
-class FabricPlatformHelper : PlatformHelper {
+@AutoService
+open class FabricPlatformHelper : PlatformHelper {
     override val platformName: String
         get() = "Fabric"
 

@@ -11,7 +11,7 @@ import org.valkyrienskies.vs_template.platform.PlatformHelper
 // common compatible binaries. This means common code can not directly use loader specific concepts such as Forge events
 // however it will be compatible with all supported mod loaders.
 object VSTemplateMod {
-    const val MOD_ID: String = "vs_template"
+    const val MOD_ID = "vs_template"
     const val MOD_NAME: String = "VS Template"
 
     @JvmStatic

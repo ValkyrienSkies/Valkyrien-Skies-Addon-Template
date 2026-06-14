@@ -1,11 +1,11 @@
 package org.valkyrienskies.vs_template.platform
 
-import com.google.auto.service.AutoService
+import com.fueledbycaffeine.autoservice.AutoService
 import net.minecraftforge.fml.ModList
 import net.minecraftforge.fml.loading.FMLLoader
 
-@AutoService(PlatformHelper::class)
-class ForgePlatformHelper : PlatformHelper {
+@AutoService
+open class ForgePlatformHelper : PlatformHelper {
     override val platformName: String
         get() = "Forge"
 
