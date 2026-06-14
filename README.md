@@ -1,5 +1,5 @@
 <p align="center">
-<img src="icon_big.png" width="512" height="512">
+<img src="icon.png" width="512" height="512">
 </p>
 <h1 align="center">
 Valkyrien Skies : Addon Template
