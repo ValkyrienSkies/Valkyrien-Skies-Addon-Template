@@ -19,13 +19,9 @@ dependencies {
     implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
 
     // region VS dependency
-    modApi("org.valkyrienskies:valkyrienskies-120-common:${rootProject.vs2_version}") {
+    // we use -forge instead of -common because arch common is intermediary but this gradle setup expects mojmaps
+    implementation("org.valkyrienskies:valkyrienskies-120-forge:${rootProject.vs2_version}") { transitive = false
         exclude group: 'org.valkyrienskies.core', module: ''
-        exclude group: "com.simibubi"
-        exclude group: "io.github.fabricators_of_create"
-        exclude group: "dev.engine-room"
-        exclude group: "dev.engine_room"
-        exclude group: "maven.modrinth"
     }
     implementation("org.valkyrienskies.core:api:${rootProject.vs_core_version}") {
         exclude group: 'org.joml', module: ''
