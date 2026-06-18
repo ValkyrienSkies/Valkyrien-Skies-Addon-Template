@@ -53,7 +53,7 @@ legacyForge {
     }
 }
 
-var mixinId = "vstemplate"
+var mixinId = "vs_template"
 
 mixin {
     add sourceSets.main, "mixins.${mixinId}.refmap.json"
