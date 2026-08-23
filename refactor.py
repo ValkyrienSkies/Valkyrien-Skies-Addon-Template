@@ -55,8 +55,6 @@ refactorFile("src/main/resources/fabric.mod.json", [
     ["vs_template", new_mod_id]
 ])
 
-os.rename(os.path.join(script_dir, "src/main/resources/vs_template.forge.mixins.json"), os.path.join(script_dir, f"src/main/resources/{new_mod_id}.mixins.json"))
-
 # Gradle
 refactorFile("gradle.properties", [
     ["group=org.valkyrienskies.vs_template", f"group={new_package}"],
