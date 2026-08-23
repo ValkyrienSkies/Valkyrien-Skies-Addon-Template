@@ -33,18 +33,14 @@ def refactorFolder(old_path, new_path):
     os.makedirs(new_path, exist_ok=True)
     os.rename(old_path, new_path)
 
-
 # Java
+refactorFile("src/main/java/org/valkyrienskies/vs_template/client/VSTemplateModClient.java", [
+    ["org.valkyrienskies.vs_template", f"{new_package}"],
+])
+refactorFile("src/main/java/org/valkyrienskies/vs_template/VSTemplateMod.java", [
+    ["org.valkyrienskies.vs_template", f"{new_package}"],
+])
 refactorFolder("src/main/java/org/valkyrienskies/vs_template", f"src/main/java/{new_package.replace(".", "/")}")
-
-# Kotlin
-refactorFile("src/main/kotlin/org/valkyrienskies/vs_template/client/VSTemplateModClient.kt", [
-    ["org.valkyrienskies.vs_template", f"{new_package}"],
-])
-refactorFile("src/main/kotlin/org/valkyrienskies/vs_template/VSTemplateMod.kt", [
-    ["org.valkyrienskies.vs_template", f"{new_package}"],
-])
-refactorFolder("src/main/kotlin/org/valkyrienskies/vs_template", f"src/main/kotlin/{new_package.replace(".", "/")}")
 
 # Resources
 refactorFile("src/main/resources/vs_template.mixins.json", [
@@ -54,8 +50,6 @@ refactorFile("src/main/resources/fabric.mod.json", [
     ["org.valkyrienskies.vs_template", f"{new_package}"],
     ["vs_template", new_mod_id]
 ])
-
-os.rename(os.path.join(script_dir, "src/main/resources/vs_template.forge.mixins.json"), os.path.join(script_dir, f"src/main/resources/{new_mod_id}.mixins.json"))
 
 # Gradle
 refactorFile("gradle.properties", [

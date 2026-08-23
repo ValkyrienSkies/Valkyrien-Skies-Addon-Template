@@ -1,6 +1,3 @@
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
     kotlin("jvm") version "2.0.0"
     id("fabric-loom") version "1.9-SNAPSHOT"
@@ -22,8 +19,6 @@ java {
     // If you remove this line, sources will not be generated.
     withSourcesJar()
 }
-
-
 
 repositories {
     // Add repositories to retrieve artifacts from in here.
@@ -70,7 +65,7 @@ dependencies {
     }
     implementation("org.joml:joml-primitives:1.10.0")
     implementation("org.joml:joml:1.10.4")
-    modImplementation("net.fabricmc:fabric-language-kotlin:${project.property("fabric_language_kotlin_version")}")
+
     api("org.jetbrains.kotlin:kotlin-stdlib:2.0.0")
     api("org.jetbrains.kotlin:kotlin-reflect:2.0.0")
     // endregion
@@ -87,7 +82,6 @@ tasks.processResources {
             "version" to project.version,
             "minecraft_version" to project.property("minecraft_version")!!,
             "loader_version" to project.property("loader_version")!!,
-            "kotlin_loader_version" to project.property("kotlin_loader_version")!!,
             "mod_name" to project.property("mod_name")!!,
             "description" to project.property("description")!!,
             "author" to project.property("author")!!,
@@ -103,10 +97,6 @@ tasks.withType<JavaCompile>().configureEach {
     // If Javadoc is generated, this must be specified in that task too.
     options.encoding = "UTF-8"
     options.release.set(targetJavaVersion)
-}
-
-tasks.withType<KotlinCompile>().configureEach {
-    compilerOptions.jvmTarget.set(JvmTarget.fromTarget(targetJavaVersion.toString()))
 }
 
 tasks.jar {
