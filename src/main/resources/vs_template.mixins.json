@@ -1,7 +1,7 @@
 {
   "required": true,
   "package": "org.valkyrienskies.vs_template.mixin",
-  "refmap": "mixins.vstemplate.refmap.json",
+  "refmap": "mixins.vs_template.refmap.json",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
   ],
