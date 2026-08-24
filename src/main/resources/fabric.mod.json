@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "vs_template",
+  "version": "${version}",
+  "name": "${mod_name}",
+  "description": "${description}",
+  "authors": ["${author}"],
+  "contact": {},
+  "license": "${license}",
+  "icon": "assets/vs_template/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "org.valkyrienskies.vs_template.client.VSTemplateModClient"
+    ],
+    "main": [
+      "org.valkyrienskies.vs_template.VSTemplateMod"
+    ]
+  },
+  "mixins": [
+    "vs_template.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-language-kotlin": ">=${kotlin_loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}",
+    "java": ">=17",
+    "valkyrienskies": ">=2.4.0"
+  }
+}
